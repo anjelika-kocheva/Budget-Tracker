@@ -11,12 +11,12 @@ let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(lo
 // calculate and update statstics
 function updateStatistics(){
     const updatedIncome = transactions
-                            .filter(transaction => transaction.amount > 0)
+                            .filter(transaction => transaction.option == "income-check")
                             .reduce((total, transaction) => total += Number(transaction.amount), 0);
 
     const updatedExpense = transactions
-                            .filter(transaction => transaction.amount < 0)
-                            .reduce((total, transaction) => total += Math.abs(transaction.amount), 0);
+                            .filter(transaction => transaction.option == "expense-check")
+                            .reduce((total, transaction) => total += transaction.amount, 0);
     
     updatedBalance = updatedIncome - updatedExpense;
     balance.textContent = updatedBalance;
@@ -38,8 +38,8 @@ function generateTemplate(id, source, amount, time){
 }
 
 // add transaction to DOM
-function addTransactionDOM(id, source, amount, time){
-    if(amount > 0){
+function addTransactionDOM(id, source, amount, option, time){
+    if(option == "income-check"){
         incomeList.innerHTML += generateTemplate(id, source, amount, time);
     } else {
         expenseList.innerHTML += generateTemplate(id, source, amount, time);
@@ -47,26 +47,28 @@ function addTransactionDOM(id, source, amount, time){
 }
 
 // add transaction to local storage
-function addTransaction(source, amount){
+function addTransaction(source, amount, option){
     const time = new Date();
     const transaction = {
         id: Math.floor(Math.random()*100000),
         source: source,
         amount: amount,
+        option: option,
         time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
     };
     transactions.push(transaction);
     localStorage.setItem("transactions", JSON.stringify(transactions));
-    addTransactionDOM(transaction.id, source, amount, transaction.time);
+    addTransactionDOM(transaction.id, source, amount, option, transaction.time);
 }
 
 
 form.addEventListener("submit", event => {
     event.preventDefault();
-    if(form.source.value.trim() === "" || form.amount.value === ""){
+    if(form.source.value.trim() === "" || form.amount.value === "" || form.amount.value <= 0 ){
         return alert("Please add proper values");
     }
-    addTransaction(form.source.value.trim(), Number(form.amount.value));
+    addTransaction(form.source.value.trim(), Number(form.amount.value), form.option.value);
+
     updateStatistics();
     form.reset();
 })
@@ -74,7 +76,7 @@ form.addEventListener("submit", event => {
 // loop through each local storage transaction and save it to the DOM 
 function getTransaction(){
     transactions.forEach(transaction => {
-        if(transaction.amount > 0){
+        if(transaction.option == "income-check"){
             incomeList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
         } else {
             expenseList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
