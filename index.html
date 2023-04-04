@@ -7,34 +7,34 @@
     <title>notNotion - Easiest Way To Track Your Transactions!</title>
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <main>
         <div class="outer-wrap">
             <div class="inner-wrap">
                 <section class="heading">
-                    <p class="title">notNotion</p>
-                    <p class="subtitle">Easiest Way To Track Your Transactions!</p>
+                    <h1>Budget Tracker</h1>
                 </section>
 
                 <section class="transaction-control">
                     <div class="actions">
                         <h3>Add Transaction</h3>
                         <form class="add">
-                            <input type="text" name="source" placeholder="Source" autocomplete="off">
-                            <input type="number" name="amount" placeholder="Amount" autocomplete="off">
+                            <input type="text" name="source" placeholder="source" autocomplete="off">
+                            <input type="number" name="amount" placeholder="amount" autocomplete="off">
                             <div class="options">
                                 <div class="option">
                                     <input type="radio" id="income-opt" name="option" value="income-check" checked>
-                                    <label for="">Income</label>
+                                    <label for="">income</label>
                                 </div>
                                 <div class="option">
                                     <input type="radio" id="expense-opt" name="option" value="expense-check">
-                                    <label for="">Expense</label>
+                                    <label for="">expense</label>
                                 </div>
                             </div>
-                            <input type="submit" value="Add Transaction">
+                            <input type="submit" value="add transaction">
                         </form>
                     </div>
                     <div class="stats">
@@ -52,7 +52,7 @@
                 </section>
 
                 <section class="transaction-history">
-                    <h3>Transaction History</h3>
+                    <h2>Transaction History</h2>
                     <div class="records">
                         <div class="income">
                             <h3>Income</h3>
@@ -71,7 +71,7 @@
         </div>
     </main>
 
-    <script src="./index.js"></script>
+    <script src="./js/script.js"></script>
     
 </body>
 </html>

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Birthstone';
+    src: url(../fonts/BirthstoneBounce/BirthstoneBounce-Regular.eot);
+    src: url(../fonts/BirthstoneBounce/BirthstoneBounce-Regular.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/BirthstoneBounce/BirthstoneBounce-Regular.otf) format('otf'),
+         url(../fonts/BirthstoneBounce/BirthstoneBounce-Regular.ttf) format('truetype'),
+         url(../fonts/BirthstoneBounce/BirthstoneBounce-Regular.woff) format('woff')
+  }
+  
+  @font-face {
+    font-family: 'Oswald';
+    src: url(../fonts/Oswald/Oswald-SemiBold.eot);
+    src: url(../fonts/Oswald/Oswald-SemiBold.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Oswald/Oswald-SemiBold.otf) format('otf'),
+         url(../fonts/Oswald/Oswald-SemiBold.ttf) format('truetype'),
+         url(../fonts/Oswald/Oswald-SemiBold.woff) format('woff'),
+         url(../fonts/Oswald/Oswald-SemiBold.woff2) format('woff2');
+  }
+
+  @font-face {
+     font-family: 'IndieFlower';
+     src: url(../fonts/IndieFlower/IndieFlower-Regular.eot);
+     src: url(../fonts/IndieFlower/IndieFlower-Regular.eot?#iefix) format('embedded-opentype'),
+          url(../fonts/IndieFlower/IndieFlower-Regular.otf) format('otf'),
+          url(../fonts/IndieFlower/IndieFlower-Regular.ttf) format('truetype'),
+          url(../fonts/IndieFlower/IndieFlower-Regular.woff) format('woff'),
+          url(../fonts/IndieFlower/IndieFlower-Regular.woff2) format('woff2');
+   }
+
+   @font-face {
+     font-family: 'Poppins';
+     src: url(../fonts/Poppins/Poppins-Regular.eot);
+     src: url(../fonts/Poppins/Poppins-Regular.eot?#iefix) format('embedded-opentype'),
+          url(../fonts/Poppins/Poppins-Regular.otf) format('otf'),
+          url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype'),
+          url(../fonts/Poppins/Poppins-Regular.woff) format('woff'),
+          url(../fonts/Poppins/Poppins-Regular.woff2) format('woff2');
+   }
+   
